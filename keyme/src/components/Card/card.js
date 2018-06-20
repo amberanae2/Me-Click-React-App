@@ -1,7 +1,7 @@
 import React from "react";
-import "./click.css";
+import "./card.css";
 
-const Click = props => (
+const Card = props => (
   <div className="card">
     <div className="img-container">
       <img alt={props.name} src={props.image} />
@@ -23,4 +23,4 @@ const Click = props => (
   </div>
 );
 
-export default Click;
+export default Card;
