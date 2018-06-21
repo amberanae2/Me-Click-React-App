@@ -1,111 +1,33 @@
 import React, { Component } from "react";
-import Click from "./components/Card";
-import wrapper from "./components/wrapper";
+import Card from "./components/Card";
+import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-import click from "./card.json";
+import cards from "./cards.json";
 import "./App.css";
 
 
-class CardGame extends Component {
-  constructor(props) {
-    super(props);
-    //Array of memory images
-    this.ImagePieces = ['cat', 'cat', 'dog', 'dog', 'horse', 'horse',
-    'pig', 'pig', 'snake', 'snake', 'fish', 'fish'];
-    this.tempCheckArr = [];
-    this.state = {
-      showImg: Array(this.ImagePieces.length).fill('hidden'),
-      divClick: true,
-      compareImgArr: [],
-      counter: 0
-    }   
-    this.checkMatch = this.checkMatch.bind(this);
-  }
+class App extends Component {
+  // Setting this.state.friends to the friends json array
+  state = {
+    cards
+  };
 
-  //Shuffle memory game images
-  componentWillMount() {
-    function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-          let j = Math.floor(Math.random() * (i + 1));
-          [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }
-    shuffleArray(this.ImagePieces);
-  }
-
-  //Check for match function
-  checkMatch(key, e) {
-    this.tempCheckArr.push(key.toString());
-
-    //Create copy of (compareImgArr) and add img src, for later compare
-    const imgSrc = e.target.firstChild.src;
-    const compareImgArr = [...this.state.compareImgArr];
-    compareImgArr.push(imgSrc);
-
-    //Set current clicked item as 'visible' in main array 'showImg'
-    const arr = this.state.showImg
-    arr[key] = 'visible';
-
-    //Update state, counter for block user click method
-    //after unhidding two pieces
-    this.setState({
-      showImg: arr,
-      compareImgArr: compareImgArr,
-      counter: this.state.counter + 1
-    });
-
-    //Check if 2 items are clicked - if yes - disable clicking
-    if (this.state.counter % 2) {
-      this.setState({
-        divClick: false
-      });
-      //Check if pictures are matching
-      if (compareImgArr[0] === compareImgArr[1]) {
-        this.tempCheckArr = [];
-        this.setState({
-          compareImgArr: [],
-          divClick: true
-        });
-      } else {
-        var tempArr = this.state.showImg
-        // eslint-disable-next-line
-        var firstElement = parseInt(this.tempCheckArr[0]);
-        // eslint-disable-next-line
-        var secondElement = parseInt(this.tempCheckArr[1]);
-        setTimeout(()=>{
-          tempArr[firstElement] = 'hidden';
-          tempArr[secondElement] = 'hidden';
-          this.tempCheckArr = [];
-          this.setState({
-            showImg: tempArr,
-            compareImgArr: [],
-            divClick: true
-          })
-        }, 1500)
-      }
-    }
-  }
-
+  // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
-    return(
-      <div>
-        <h1>Keeping with the CARDashians</h1>
-        <div className="mui-panel wrapper">
-          {this.ImagePieces.map((text, i) => {
-            return (
-              <div key={i} className="modal mui-panel" 
-                onClick={this.state.divClick ? (e) => this.checkMatch(i, e) : undefined}>
-                <img style={{visibility: this.state.showImg[i]}} src={'./'+text+'.jpg'}
-                  srcSet={'./'+text+'_lrg.jpg 1000w'} key={i} alt="Game Element"/>
-              </div>
-            )
-          })}
-        </div>
-      </div>
-    )
+    return (
+      <Wrapper>
+        <Title>Keeping Up With The CARDashians</Title>
+        {this.state.cards.map(card => (
+          <card
+            id={card.id}
+            key={card.id}
+            name={card.name}
+            image={card.image}
+          />
+        ))}
+      </Wrapper>
+    );
   }
 }
 
-
-export default CardGame;
+export default App;
