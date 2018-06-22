@@ -1,32 +1,70 @@
 import React, { Component } from "react";
-import Card from "./components/Card";
+import FriendCard from "./components/FriendCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-import cards from "./cards.json";
+import friends from "./friends.json";
 import "./App.css";
 
 
 class App extends Component {
-  // Setting this.state.friends to the friends json array
   state = {
-    cards
+      message: "Click an image to begin!",
+      topScore: 0,
+      curScore: 0,
+      friends: friends,
+      unselectedFriends: friends
+  }
+
+  componentDidMount() {
+  }
+
+  shuffleArray = array => {
+      for (let i = array.length - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+      }
+  }
+
+  selectDog = friends => {
+      const findfriend = this.state.friends.find(item => item.friends === friends);
+
+      if(findfriend === undefined) {
+          this.setState({ 
+              message: "You guessed incorrectly!",
+              topScore: (this.state.curScore > this.state.topScore) ? this.state.curScore : this.state.topScore,
+              curScore: 0,
+              friends: friends,
+              unselectedFriends: friends
+          });
+      }
+      else {
+          const newFriends = this.state.unselectedFriends.filter(item => item.friends!== friends);
+          
+          this.setState({ 
+              message: "You guessed correctly!",
+              curScore: this.state.curScore + 1,
+              friends: friends,
+              unselectedFriends: newFriends
+          });
+      }
+
+      this.shuffleArray(friends);
   };
 
-  // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
-    return (
-      <Wrapper>
-        <Title>Keeping Up With The CARDashians</Title>
-        {this.state.cards.map(card => (
-          <card
-            id={card.id}
-            key={card.id}
-            name={card.name}
-            image={card.image}
+      return (
+        <Wrapper>
+        <Title>Keeping Up With The CARDashians!</Title>
+        {this.state.friends.map(friend => (
+          <FriendCard
+            id={friend.id}
+            key={friend.id}
+            name={friend.name}
+            image={friend.image}
           />
         ))}
       </Wrapper>
-    );
+      );
   }
 }
 

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Kylie",
+    "image": "https://scstylecaster.files.wordpress.com/2017/04/kylie-jenner-at-westime-celebrates-kris-jenners-haute-living-cover.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Kim",
+    "image": "https://media.allure.com/photos/5a71e292a85d833f563ada3e/3:4/w_767/kim-kardashian-swears-she-wont-wear-this-makeup-again.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Kourtney",
+    "image": "https://cdn-img.instyle.com/sites/default/files/styles/684xflex/public/images/2017/06/062817-kourtney-kardashian-diet-lead.jpg?itok=jWycv830"
+  },
+  {
+    "id": 4,
+    "name": "Khloe",
+    "image": "https://pbs.twimg.com/profile_images/935995693793026048/f5yasMvo.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Kendall",
+    "image": "https://media.wmagazine.com/photos/5a5f5f33c4341d3bec531e85/4:3/w_1536/kendall-jenner-blake-griffin-never-serious-web-lead.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Kris",
+    "image": "http://www3.pictures.stylebistro.com/gi/Kris+Jenner+Short+Hairstyles+Messy+Cut+j7AqSy3pKj6l.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Kanye",
+    "image": "https://www.grammy.com/sites/com/files/styles/image_landscape_hero/public/kanyewest-hero-104092319.jpg?itok=ECpma28k"
+  },
+  {
+    "id": 8,
+    "name": "Scott",
+    "image": "https://cdn.narcity.com/u/2017/11/03/6ac45dcb614a3f43e27dc25d05545b6756e294be.png_1200x630.png"
+  },
+  {
+    "id": 9,
+    "name": "Rob ",
+    "image": "https://nyppagesix.files.wordpress.com/2018/05/gettyimages-535064270.jpg?quality=90&strip=all&w=618&h=410&crop=1"
+  },
+  {
+    "id": 10,
+    "name": "Caitlynn",
+    "image": "https://pmcdeadline2.files.wordpress.com/2016/08/caitlyn-jenner-i-am-cait.jpg?w=446&h=299&crop=1"
+  },
+  {
+    "id": 11,
+    "name": "Johnathan",
+    "image": "https://gl-images.condecdn.net/image/8dOlkLQ0q6v/crop/1020/0.5235602094240838/f/jonathan-cheban-2_glamour_1mar17_gettyimages_twi.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Malika",
+    "image": "https://toofab.akamaized.net/2016/10/26/1026-haqq-inset-810x960.jpg"
+  }
+]

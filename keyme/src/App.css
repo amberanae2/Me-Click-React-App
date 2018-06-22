@@ -1,14 +1,9 @@
-
-body {
-  background-color:white;
+Wrapper{
+  background-color: black;
 }
 
-h1 {
+.title {
+  width: 100%;
   text-align: center;
-  color:black;
-}
- 
-p {
-  color:black;
-  text-align: center;
+  margin-bottom: 50px;
 }
