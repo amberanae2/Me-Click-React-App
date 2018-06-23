@@ -25,12 +25,12 @@ class App extends Component {
       }
   }
 
-  selectDog = friends => {
+  selectFriends = friends => {
       const findfriend = this.state.friends.find(item => item.friends === friends);
 
       if(findfriend === undefined) {
           this.setState({ 
-              message: "You guessed incorrectly!",
+              message: "Sorry Try Again!!",
               topScore: (this.state.curScore > this.state.topScore) ? this.state.curScore : this.state.topScore,
               curScore: 0,
               friends: friends,
@@ -41,7 +41,7 @@ class App extends Component {
           const newFriends = this.state.unselectedFriends.filter(item => item.friends!== friends);
           
           this.setState({ 
-              message: "You guessed correctly!",
+              message: "Sorry Try Again!",
               curScore: this.state.curScore + 1,
               friends: friends,
               unselectedFriends: newFriends
