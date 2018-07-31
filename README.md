@@ -4,3 +4,7 @@
 #### What Does It Do? Simple Guessing Game for the User To Choose A Card and guess the person
 #### User Earns Points based on the Correct Card Chosen
 #### User Does Not earn points if the wrong answer is Chosen.
+
+For the Live Version
+
+https://lit-brushlands-50027.herokuapp.com/
