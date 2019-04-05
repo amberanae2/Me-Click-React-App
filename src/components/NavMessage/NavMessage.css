@@ -1,9 +1,11 @@
 .navbar .correct {
     animation: 1s correct;
+    float: left;
   }
   
   .navbar .incorrect {
     animation: 1s incorrect;
+    float: right;
   }
   
   @keyframes correct {

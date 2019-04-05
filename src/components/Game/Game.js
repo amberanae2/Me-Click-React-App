@@ -11,7 +11,7 @@ class Game extends Component {
     state = {
       data,
       score: 0,
-      topScore: 0
+      topScore: 5
     };
   
     componentDidMount() {
